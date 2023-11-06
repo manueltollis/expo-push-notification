@@ -1,0 +1,47 @@
+{
+  "name": "sentinel-expo-push-service",
+  "version": "1.0.0",
+  "description": "This is a push notification service for the Sentinel Mobile application",
+  "scripts": {
+    "clean": "rimraf ./build",
+    "build": "npm-run-all format lint clean && tsc",
+    "start": "node src",
+    "lint": "eslint src",
+    "format": "npx prettier --write src",
+    "format:check": "npx prettier --check src",
+    "test": "jest",
+    "generate": "drizzle-kit generate:pg",
+    "push": "drizzle-kit push:pg",
+    "migrate": "ts-node ./src/db/utils/migrate.ts",
+    "seed": "ts-node ./src/db/utils/seed.ts"
+  },
+  "author": "Manuel Tollis",
+  "devDependencies": {
+    "@types/express": "^4.17.20",
+    "@types/jest": "^29.4.0",
+    "@types/node": "^18.14.0",
+    "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "drizzle-kit": "^0.19.13",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "jest": "^29.4.3",
+    "nodemon": "^2.0.20",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.4",
+    "rimraf": "^4.1.2",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "drizzle-orm": "^0.28.6",
+    "expo-server-sdk": "^3.7.0",
+    "express": "^4.18.2",
+    "postgres": "^3.4.3",
+    "zod": "^3.22.4"
+  }
+}
